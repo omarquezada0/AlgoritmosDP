@@ -18,7 +18,8 @@ def ejecutar_pruebas():
     t_insertion = []
     t_gnome = []
     t_exchange = []
-    t_stooge = []
+    t_merge = []
+    t_quick =[]
 
     for n in N:
  
@@ -30,6 +31,7 @@ def ejecutar_pruebas():
         l4 = lista_original.copy()
         l5 = lista_original.copy()
         l6 = lista_original.copy()
+        l7 = lista_original.copy()
 
         print(f"\n--- Ordenando listas de tamaño {n} ---")
 
@@ -63,11 +65,17 @@ def ejecutar_pruebas():
         t_fin = time.time()
         t_exchange.append(t_fin - t_ini)
 
-        # Stooge Sort
+        # Merge Sort
         t_ini = time.time()
-        print(ord.stooge_sort(l6))
+        print(ord.merge_sort(l6))
         t_fin = time.time()
-        t_stooge.append(t_fin - t_ini)
+        t_merge.append(t_fin - t_ini)
+
+        # Quick Sort
+        t_ini = time.time()
+        print(ord.quick_sort(l7))
+        t_fin = time.time()
+        t_quick.append(t_fin - t_ini)
 
 
-    return N, t_selection, t_bubble, t_insertion, t_gnome, t_exchange, t_stooge
+    return N, t_selection, t_bubble, t_insertion, t_gnome, t_exchange, t_merge, t_quick
